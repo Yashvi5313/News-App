@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_img"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="WICKET-KEEPERS"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30sp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName1"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="BATSMEN"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName2"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName3"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName4"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName5"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="ALL-ROUNDERS"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName6"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="BOWLERS"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName7"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName8"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName9"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/img" />
+
+                    <TextView
+                        android:id="@+id/PlayerName10"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/montserrat_light"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

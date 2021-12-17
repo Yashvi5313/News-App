@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/account"
+            android:title="My Account" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/setting1"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout1"
+            android:title="Logout" />
+    </group>
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Preferences"
+            android:icon="@drawable/preferences"
+            android:title="Preferences" />
+        <item
+            android:id="@+id/nav_Help"
+            android:icon="@drawable/help"
+            android:title="Help" />
+    </group>
+
+
+    <item android:title="Other">
+        <menu>
+            <item android:title="About Us" />
+            <item android:title="Privacy Policy" />
+        </menu>
+    </item>
+
+</menu>
