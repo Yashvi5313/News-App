@@ -21,6 +21,7 @@ public class FullStoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFullStoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setToolbar();
 
         Intent intent = getIntent();
         Story = intent.getStringExtra("FullStory");
@@ -31,12 +32,11 @@ public class FullStoryActivity extends AppCompatActivity {
         binding.fullTitle.setText(topStory.getTitle());
         binding.fullStory.setText(topStory.getFullStory());
         binding.fullTime.setText(topStory.getTime());
+    }
 
-        binding.toolbar4.fullStoryBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+    private void setToolbar() {
+        setSupportActionBar(binding.toolbar3);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.toolbar3.setNavigationOnClickListener(v -> finish());
     }
 }

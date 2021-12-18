@@ -10,11 +10,9 @@ import android.view.View;
 
 import com.example.newsapithoughmodelclass.Adapter.FanTipsAdapter;
 import com.example.newsapithoughmodelclass.Adapter.ParentPlayerAdapter;
-import com.example.newsapithoughmodelclass.Adapter.ViewTeamAdapter;
 import com.example.newsapithoughmodelclass.FeaturedModel.Player;
 import com.example.newsapithoughmodelclass.FeaturedModel.SuggestedTeam;
 import com.example.newsapithoughmodelclass.FeaturedModel.Tip;
-import com.example.newsapithoughmodelclass.StoryModel.ViewTeamActivity;
 import com.example.newsapithoughmodelclass.databinding.ActivityFanTipsBinding;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -37,6 +35,7 @@ public class FanTipsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityFanTipsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setToolbar();
 
         Intent intent = getIntent();
         tTips = intent.getStringExtra("TitleTips");
@@ -50,14 +49,6 @@ public class FanTipsActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FanTipsActivity.this, LinearLayoutManager.VERTICAL, false);
         binding.TitleTipsRecyclerview.setLayoutManager(layoutManager);
-
-        binding.toolbar5.fanTipsBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
 
         for (int i = 0; i < tipsArrayList.size(); i++) {
             if (tipsArrayList.get(i).getTipstitle().contains("Suggested Playing XI")) {
@@ -111,5 +102,10 @@ public class FanTipsActivity extends AppCompatActivity {
 //            }
 //        });
 
+    }
+    private void setToolbar() {
+        setSupportActionBar(binding.toolbar1);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.toolbar1.setNavigationOnClickListener(v -> finish());
     }
 }

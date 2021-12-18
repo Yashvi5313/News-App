@@ -29,6 +29,7 @@ public class TopStoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityTopStoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setToolbar();
 
         Intent intent = getIntent();
         StoryFeed = intent.getStringExtra("Story");
@@ -43,13 +44,6 @@ public class TopStoryActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(TopStoryActivity.this, LinearLayoutManager.VERTICAL, false);
         binding.storyRecyclerview.setLayoutManager(layoutManager);
 
-        binding.toolbar3.topStoryBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         topStoryAdapter.setItemFullClickListener(new TopStoryAdapter.ItemFullClickListener() {
             @Override
             public void onItemClick(TopStory topStory, int pos) {
@@ -60,5 +54,11 @@ public class TopStoryActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+    }
+
+    private void setToolbar() {
+        setSupportActionBar(binding.toolbar5);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.toolbar5.setNavigationOnClickListener(v -> finish());
     }
 }

@@ -6,14 +6,18 @@
     android:layout_marginBottom="10dp"
     android:background="#1a1a1a">
 
-    <include
-        android:id="@+id/toolbar4"
-        layout="@layout/toolbar4" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:title="Full Story"
+        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar4"
+        android:layout_below="@+id/toolbar3"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView

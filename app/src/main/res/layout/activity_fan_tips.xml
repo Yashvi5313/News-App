@@ -7,9 +7,13 @@
     android:background="#1a1a1a"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/toolbar5"
-        layout="@layout/toolbar5" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:title="Fan Tips"
+        app:titleTextColor="@color/white" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

@@ -8,9 +8,13 @@
     android:background="#303030"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/toolbar_login"
-        layout="@layout/toolbar_login" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:title="Log In"
+        app:titleTextColor="@color/white" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

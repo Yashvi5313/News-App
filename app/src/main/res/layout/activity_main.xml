@@ -15,6 +15,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+
+            android:background="#000000"
+            app:title="News App"
+            app:titleTextColor="@color/white" />
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -202,7 +211,11 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#1a1a1a"
         app:headerLayout="@layout/nav_header_main"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:transitionGroup="true"
         app:menu="@menu/navigation_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

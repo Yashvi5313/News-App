@@ -10,6 +10,7 @@
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
         app:title="Featured Tips"
         app:titleTextColor="@color/white" />
 

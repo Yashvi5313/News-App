@@ -39,15 +39,9 @@ public class LoginMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setToolbar();
 
         mAuth = FirebaseAuth.getInstance();
-
-        binding.toolbarLogin.loginBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +77,12 @@ public class LoginMainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setToolbar() {
+        setSupportActionBar(binding.toolbar4);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.toolbar4.setNavigationOnClickListener(v -> finish());
     }
 
     private void signInWithCredential(PhoneAuthCredential credential) {

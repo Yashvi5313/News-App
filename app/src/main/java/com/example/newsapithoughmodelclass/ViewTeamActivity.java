@@ -1,4 +1,4 @@
-package com.example.newsapithoughmodelclass.StoryModel;
+package com.example.newsapithoughmodelclass;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +27,7 @@ public class ViewTeamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityViewTeamBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setToolbar();
 
         Intent intent = getIntent();
         team = intent.getStringExtra("Teams");
@@ -41,12 +42,11 @@ public class ViewTeamActivity extends AppCompatActivity {
         TabLayoutMediator tabLayout = new TabLayoutMediator(binding.tabPool, binding.pager, true, (tab, position) -> {
         });
         tabLayout.attach();
+    }
 
-        binding.toolbar.suggestedBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+    private void setToolbar() {
+        setSupportActionBar(binding.toolbar7);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.toolbar7.setNavigationOnClickListener(v -> finish());
     }
 }
