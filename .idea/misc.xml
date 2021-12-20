@@ -17,6 +17,9 @@
         <entry key="app/src/main/res/layout/activity_view_team.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/custom_dailog.xml" value="0.3411458333333333" />
+        <entry key="app/src/main/res/layout/custom_rating_dialog.xml" value="0.3411458333333333" />
+        <entry key="app/src/main/res/layout/dailog.xml" value="0.3411458333333333" />
         <entry key="app/src/main/res/layout/event_item.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/fan_tips_item.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/layout/featured_item.xml" value="0.3385416666666667" />

@@ -16,9 +16,9 @@
 
 
     <item
-        android:id="@+id/notification"
+        android:id="@+id/Rating"
         android:icon="@drawable/notification"
-        android:title="Notification" />
+        android:title="Rating" />
 
 
     <item

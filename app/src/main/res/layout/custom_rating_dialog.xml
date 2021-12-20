@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Did you like the app?"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Let us know what you think"
+        android:textColor="@color/white" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:rating="2.5"
+        android:stepSize="0.1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:padding="@dimen/_6sdp"
+        android:text="Great stuff!!"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/txtSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="@dimen/_10sdp"
+            android:text="SEND COMMENT"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/txtCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/txtSend"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="@dimen/_10sdp"
+            android:text="CANCEL"
+            android:textSize="@dimen/_14sdp" />
+
+    </RelativeLayout>
+</LinearLayout>

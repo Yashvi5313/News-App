@@ -5,15 +5,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.newsapithoughmodelclass.Adapter.MainFeaturedAdapter;
@@ -27,6 +28,8 @@ import com.example.newsapithoughmodelclass.FeaturedModel.SuggestedTeam;
 import com.example.newsapithoughmodelclass.StoryModel.StoryRoot;
 import com.example.newsapithoughmodelclass.StoryModel.TopStory;
 import com.example.newsapithoughmodelclass.databinding.ActivityMainBinding;
+import com.example.newsapithoughmodelclass.databinding.CustomDailogBinding;
+import com.example.newsapithoughmodelclass.databinding.CustomRatingDialogBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.gson.Gson;
@@ -1649,32 +1652,83 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.notification_background:
-                Toast.makeText(getApplicationContext(), "You Have one Notification...", Toast.LENGTH_SHORT).show();
+            case R.id.Rating:
+                final Dialog Rdialog = new Dialog(MainActivity.this, android.R.style.Theme_Light);
+                Rdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                CustomRatingDialogBinding ratingDialogBinding;
+                ratingDialogBinding = CustomRatingDialogBinding.inflate(getLayoutInflater());
+                Rdialog.setContentView(ratingDialogBinding.getRoot());
+
+
+                int width1 = WindowManager.LayoutParams.MATCH_PARENT;
+                int height2 = WindowManager.LayoutParams.MATCH_PARENT;
+                Rdialog.getWindow().setLayout(width1, height2);
+
+                Rdialog.setCancelable(true);
+
+                ratingDialogBinding.txtCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Rdialog.dismiss();
+                    }
+                });
+
+                ratingDialogBinding.txtSend.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Rdialog.dismiss();
+                    }
+                });
+                Rdialog.show();
                 break;
+
             case R.id.LogIn:
                 Intent intent = new Intent(MainActivity.this, LoginMainActivity.class);
                 startActivity(intent);
                 break;
+
             case R.id.LogOut:
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("Do you want to exit ?");
-                builder.setTitle("Alert !");
-                builder.setCancelable(false);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                final Dialog dialog = new Dialog(MainActivity.this);
+                CustomDailogBinding customDailogBinding;
+                customDailogBinding = CustomDailogBinding.inflate(getLayoutInflater());
+                dialog.setContentView(customDailogBinding.getRoot());
+
+                int width = WindowManager.LayoutParams.MATCH_PARENT;
+                int height = WindowManager.LayoutParams.WRAP_CONTENT;
+                dialog.getWindow().setLayout(width, height);
+
+                customDailogBinding.btnYes.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(View v) {
                         finish();
                     }
                 });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                customDailogBinding.btnNo.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+                    public void onClick(View v) {
+                        dialog.dismiss();
                     }
                 });
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                dialog.show();
+
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                builder.setMessage("Do you want to exit ?");
+//                builder.setTitle("Alert !");
+//                builder.setCancelable(false);
+//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finish();
+//                    }
+//                });
+//                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//                AlertDialog alertDialog = builder.create();
+//                alertDialog.show();
                 break;
         }
         return super.onOptionsItemSelected(item);
