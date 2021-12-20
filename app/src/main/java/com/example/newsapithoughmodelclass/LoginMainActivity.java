@@ -2,29 +2,32 @@ package com.example.newsapithoughmodelclass;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.newsapithoughmodelclass.LoginModel.Login;
 import com.example.newsapithoughmodelclass.databinding.ActivityLoginMainBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class LoginMainActivity extends AppCompatActivity {
@@ -33,6 +36,7 @@ public class LoginMainActivity extends AppCompatActivity {
     private static final String TAG = "LoginMainActivity";
     private FirebaseAuth mAuth;
     private String verificationId;
+    private ArrayList<Login> loginArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class LoginMainActivity extends AppCompatActivity {
         binding = ActivityLoginMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setToolbar();
+        loadData();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -51,6 +56,10 @@ public class LoginMainActivity extends AppCompatActivity {
                 } else {
                     String phone = "+91" + binding.tvmobile.getText().toString();
                     sendVerificationCode(phone);
+                    Login login = new Login();
+                    login.PhoneNo = phone;
+                    loginArrayList.add(login);
+                    saveData();
                 }
 
                 if (binding.tvOtp.getVisibility() == View.GONE) {
@@ -77,6 +86,49 @@ public class LoginMainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared Preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson1 = new Gson();
+        String json = gson1.toJson(loginArrayList);
+        editor.putString("Login", json);
+        editor.apply();
+        Toast.makeText(this, "Saved Array List to Shared Preferences.", Toast.LENGTH_LONG).show();
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("shared Preferences", MODE_PRIVATE);
+        Gson gson1 = new Gson();
+        String json = sharedPreferences.getString("Login", null);
+        Type type = new TypeToken<ArrayList<Login>>() {
+        }.getType();
+        loginArrayList = gson1.fromJson(json, type);
+
+        if (loginArrayList == null) {
+            loginArrayList = new ArrayList<>();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+
+        String s1 = sh.getString("Phone", "");
+        binding.tvmobile.setText(s1);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+        myEdit.putString("Phone", binding.tvmobile.getText().toString());
+        myEdit.apply();
     }
 
     private void setToolbar() {
